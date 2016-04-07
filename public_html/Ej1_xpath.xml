@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicios de Autor: Bartolomé Sintes Marco 
+	ej1.1: /ies/nombre-- Nombre del instituto
+	ej1.2: // web-- pagina web del instituto
+	ej1.3: /ies/ciclos/ciclo/nombre -- 
+		//ciclo/nombre --	nombre de los ciclos formativos
+	ej1.4: //ciclo/@id --siglas por las que se conocen los ciclos 
+	ej1.5: //decretoTitulo/@año -- años en los que se publicaron los decretos de titulo de los Ciclos Formativos
+	ej1.6://ciclo[grado='Medio'] -- Toda la informacion de los Ciclos formativos de grado medio
+	ej1.7: //ciclo[grado='Superior'] -- Nombre de los ciclos formativos de grado superior
+	ej1.8://ciclo/decretoTitulo[@año<2010]/../nombre -- Nombre de los ciclos formativos anteriores a 2010
+	ej1.9: //ciclo/decretoTitulo[@año=2008]/../nombre
+	//ciclo/decretoTitulo[@año=2010]/../nombre
+	//ciclo/decretoTitulo[@año=2008 or @año=2010]/../nombre --nombre de los ciclos formativos de 2008 o 2010
+-->
+<ies>
+  <nombre>IES Virgen del Carmen</nombre>
+  <web>http://www.iesvirgendelcarmen.com</web>
+  <ciclos>
+    <ciclo id="ASIR">
+      <nombre>Administración de Sistemas Informáticos en Red</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2009" />
+    </ciclo>
+    <ciclo id="DAW">
+      <nombre>Desarrollo de Aplicaciones Web</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2010" />
+    </ciclo>
+    <ciclo id="SMR">
+      <nombre>Sistemas Microinformáticos y Redes</nombre>
+      <grado>Medio</grado>
+      <decretoTitulo año="2008" />
+    </ciclo>
+  </ciclos>
+</ies>

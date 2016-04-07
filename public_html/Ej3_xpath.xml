@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicios del Autor: Bartolomé Sintes Marco 
+1. Nombre de los modulos del ciclo "Sistemas Microinformaticos y Redes" (Aplicaciones Web). Nota: no se deben utilizar las siglas SMR.
+(PASO 1) la consulta que devuelve "Aplicaciones Web" 
+//modulos/modulo[ciclo='SMR']/nombre
+(PASO 2) la consulta que devuelve SMR
+//ciclos/ciclo[nombre='Sistemas Microinformaticos y Redes']/@id
+(PASO 3) Pongo la condicion del paso 1 la consulta del paso - Divide y venceras-
+//modulos/modulo[ciclo=//ciclos/ciclo[nombre='Sistemas Microinformaticos y redes']/@id]/nombre
+2. Nombre de los ciclos que incluyen el modulo "Lenguajes de marcas y sistemas de gestion de informacion"(Administracion de sistemas informaticos en red, desarrollo de aplicaciones web).
+(PASO 1) Siglas de los ciclos con lenguajes de marcas
+//modulo[nombre='Lenguajes de marcas y sistemas de gestion de informacion]/ciclo
+(PASO 2) aplicamos ls seleccion a la consulta de ciclos con esas siglas
+//ciclos/ciclo[@id= ??????????]/nombre
+//ciclos/ciclo[@id=//modulo[nombre='Lenguajes de marcas y sistemas de gestion de informacion']/ciclo]/nombre
+
+3. Nombre de los modulos de ciclos de Grado Superior (Gestion de bases de datos, lenguajes de marcas y sistemas de gestion de informacion, implantacion de aplicacion web)
+//ciclos/ciclo[grado='Superior']/@id
+//modulo[ciclo=....]/nombre
+//modulo[ciclo=//modulo[ciclo=//ciclos/ciclo[grado=superior]/@id]/nombre]/nombre
+
+4. Nombre de los modulos de ciclos cuyo titulo se aprobó en 2008 (Aplicaciones web).
+(PASO 1): ID de los ciclos de 2008
+//ciclos/ciclo/decretoTitulo[|año='2008']/../@id
+(PASO 2): modulos de esos ciclos por ID
+//modulos/modulo[....]/nombre
+(PASO 3): Aplico Subconsulta
+//modulos/modulo[ciclo=//ciclos/ciclo/decretoTitulo[@año='2008']/../@id]/nombre
+
+5. Grado de los ciclos con modulos de primer curso (Superior, Superior) 
+Paso 1: modulos de 1º
+//modulos/modulo[curso=1]/ciclo
+//ciclos/ciclo[@id=....]/grado
+Paso 2: 
+//ciclos/ciclo[@id=//modulos/modulo[curso=1]/ciclo]/grado
+-->
+<ies>
+ <nombre>IES Virgen del Carmen</nombre>
+  <web>http://www.iesvirgendelcarmen.com</web>
+  <ciclos>
+    <ciclo id="ASIR">
+      <nombre>Administración de Sistemas Informáticos en Red</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2009" />
+    </ciclo>
+    <ciclo id="DAW">
+      <nombre>Desarrollo de Aplicaciones Web</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2010" />
+    </ciclo>
+    <ciclo id="SMR">
+      <nombre>Sistemas Microinformáticos y Redes</nombre>
+      <grado>Medio</grado>
+      <decretoTitulo año="2008" />
+    </ciclo>
+  </ciclos>
+  <modulos>
+    <modulo id="0228">
+      <nombre>Aplicaciones web</nombre>
+      <curso>2</curso>
+      <horasSemanales>4</horasSemanales>
+      <ciclo>SMR</ciclo>
+    </modulo>
+    <modulo id="0372">
+      <nombre>Gestión de bases de datos</nombre>
+      <curso>1</curso>
+      <horasSemanales>6</horasSemanales>
+      <ciclo>ASIR</ciclo>
+    </modulo>
+    <modulo id="0373">
+      <nombre>Lenguajes de marcas y sistemas de gestión de información</nombre>
+      <curso>1</curso>
+      <horasSemanales>4</horasSemanales>
+      <ciclo>ASIR</ciclo>
+      <ciclo>DAW</ciclo>
+    </modulo>
+    <modulo id="0376">
+      <nombre>Implantación de aplicaciones web</nombre>
+      <curso>2</curso>
+      <horasSemanales>4</horasSemanales>
+      <ciclo>ASIR</ciclo>
+    </modulo>
+  </modulos>
+</ies>
